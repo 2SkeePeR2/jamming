@@ -4,10 +4,13 @@ import { Track } from "../Track/Track";
 
 export class Tracklist extends React.Component{
     render(){
+        let xyz = null
+        if(this.props.tracks){
+            xyz = this.props.tracks.map(track=>{return <Track track={track} key={track.id} />})
+        }
         return(
             <div className="TrackList">
-                if(this.props.tracks){
-                this.props.tracks.map(track=>{return <Track track={track} key={track.id} />})}
+                {xyz}
             </div>
         )
     }
